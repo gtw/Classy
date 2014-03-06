@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://getbootstrap.com/examples/signin/signin.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="container">
+		<h2 class="form-signin-heading">Sign In</h2>
+		<%= form_tag('/sessions', :method => :create)  do %>
+			  <%= text_field_tag :email, "", placeholder: "Email", :class => "form-control" %>
+			  <br>
+			  <%= password_field_tag :password, "", placeholder: "Password", :class => "form-control" %>
+			  <br>
+			  <%= submit_tag "Login", :class => "btn btn-lg btn-primary btn-block"%>
+		<% end %>
+    </div>
+  </body>
+</html>

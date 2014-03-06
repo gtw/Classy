@@ -1,0 +1,46 @@
+#home_jumbo{
+	background: url('http://imgsrv.ktsa.com/image/ktsaa/UserFiles/Image/stock_news_images/school%20classroom.jpg') no-repeat fixed;
+	background-size: 100% 100%;
+	text-shadow: white 0px 0px 5px;
+	height: 500px;
+}
+
+#class_jumbo{
+
+	height: 50px;
+}
+.jumbo_edit
+{
+	padding: 0px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.home_navbar
+{
+		color: red;
+}
+
+.sample_vid
+{
+	padding-bottom: 5px;
+}
+
+//Mix-In
+.text-overflow() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.class_desc
+{
+	display: inline-block;
+	max-height: 20px;
+	.text-overflow()
+}
+
+.course_well
+{
+	padding: 5px;
+}
