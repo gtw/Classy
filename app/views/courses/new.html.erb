@@ -1,0 +1,20 @@
+<% content_for :head do %>
+  <link rel="stylesheet" href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<% end %>
+
+<div class = "container">
+  <h1>Create a Course</h1>
+
+  <%= form_tag "/courses" do %>
+
+    <%= text_field_tag :course_name, "", :placeholder => "Course Name, (e.g. Algebra 1)", :class => "form-control"%>
+    <br>
+    <%= text_field_tag :year, "", :placeholder => "Year of Course (e.g. 2013 for 2013-2014 school year)", :class => "form-control" %>
+    <br>
+    <%= text_field_tag :grade_level, "", :placeholder => "Grade Level (e.g. 9 for 9th)", :class => "form-control" %>
+    <br>
+    <%= submit_tag "Create!" %>
+
+  <% end %>
+</div>

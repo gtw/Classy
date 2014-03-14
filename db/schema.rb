@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140305043452) do
+ActiveRecord::Schema.define(version: 20140308211600) do
 
   create_table "comments", force: true do |t|
     t.integer  "lesson_id"
@@ -34,12 +34,13 @@ ActiveRecord::Schema.define(version: 20140305043452) do
     t.datetime "lesson_date"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "title"
   end
 
   create_table "materials", force: true do |t|
     t.integer  "lesson_id"
     t.string   "format"
-    t.string   "type"
+    t.string   "material_type"
     t.text     "link"
     t.datetime "created_at"
     t.datetime "updated_at"

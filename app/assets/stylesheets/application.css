@@ -3,3 +3,9 @@
 *= require_tree
 *= require my_styles
 */
+
+.vertical_center{
+
+	top: 50%;
+
+}

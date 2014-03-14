@@ -1,0 +1,26 @@
+<% content_for :head do %>
+  <link rel="stylesheet" href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<% end %>
+
+<div class = "container">
+  <%= form_tag "/courses/#{@course.id}", :method => 'patch' do %>
+
+    <div class="form-group">
+      <%= label_tag :course_name %>
+      <%= text_field_tag :course_name, @course.course_name, class: 'form-control', placeholder: 'Enter new course name' %>
+    </div>
+
+    <div class="form-group">
+      <%= label_tag :year %>
+      <%= text_field_tag :year, @course.year, class: 'form-control', placeholder: 'Enter new course year' %>
+    </div>
+
+    <div class="form-group">
+      <%= label_tag :grade_level %>
+      <%= text_field_tag :grade_level, @course.grade_level, class: 'form-control', placeholder: "Enter new course grade level" %>
+    </div>
+
+    <%= submit_tag 'Update Course', class: 'btn btn-default' %>
+  <% end %>
+</div>

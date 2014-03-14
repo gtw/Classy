@@ -1,10 +1,18 @@
 class UsersController < ApplicationController
 
+	skip_before_action :require_login, only: [:create, :welcome, :new]
+
 	def show
-		@user = User.find(params[:id])
-		if session[:user_id] != @user.id
-			redirect_to root_url, notice: "Cannot access other user pages"
-		end
+		# if session[:user_id].blank?
+  # 			redirect_to welcome_url
+  # 			return
+  # 		elsif User.find(session[:user_id]).blank?
+		# 	redirect_to welcome_url, notice: "Unrecognized User ID, please sign back in"
+		# 	return
+		# else
+		@user = User.find(session[:user_id])
+		@courses = @user.courses
+		# end
 	end
 
 	def create
@@ -19,4 +27,8 @@ class UsersController < ApplicationController
 		session[:user_id] = user.id 
 		redirect_to root_url
 	end
+
+  	def welcome
+  	end
+
 end

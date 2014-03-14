@@ -1,18 +1,19 @@
-class CoursesController < ApplicationController
+class LessonsController < ApplicationController
 
 	def show
-		if Roster.where("course_id = ? AND user_id = ?", params[:id], session[:user_id]).count == 0
-			redirect_to root_url
-			return
-		end
-		@course = Course.find(params[:id])
+		@lesson = Lesson.find(params[:id])
 		@user   = User.find(session[:user_id])
+		@comments = Comment.where("lesson_id == ?", params[:id]).order(created_at: :desc)
 	end
 
+	def new
+		@course = Course.find(params[:course_id])
+	end
+	
 	def create
-		course = Course.new
-		course.course_name = params[:course_name]
-		course.year  = params[:year]
+		lesson = Lesson.new
+		lesson.title = params[:lesson_title]
+		lesson.course_id  = params[:year]
 		course.grade_level = params[:grade_level]
 		course.save
 
@@ -43,10 +44,5 @@ class CoursesController < ApplicationController
   		redirect_to root_url
   	end
 
-  	def index
-  		@user   = User.find(session[:user_id])
-  		@courses = Course.all
-	end
+
 end
-
-

@@ -26,6 +26,12 @@
 	padding-bottom: 5px;
 }
 
+.vertical_center{
+
+	top: 50%;
+
+}
+
 //Mix-In
 .text-overflow() {
   overflow: hidden;
@@ -43,4 +49,6 @@
 .course_well
 {
 	padding: 5px;
+	list-style-type: none;
 }
+

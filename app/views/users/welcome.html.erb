@@ -1,0 +1,25 @@
+<% content_for :head do %>
+  <link rel="stylesheet" href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<% end %>
+
+<div class="container">
+  <div class="header">
+    <ul class="nav nav-pills pull-right">
+      <li class="active"><a href="#">Home</a></li>
+      <li><%= link_to "Sign In", new_session_url %></li>
+    </ul>
+    <h3 class="text-muted">Classy</h3>
+  </div>
+
+  <div class="jumbotron">
+    <h1>Welcome to Classy</h1>
+    <p class="lead">Welcome to class!  Log-in or sign up to Watch videos from past classes, access assignments, and ask questions to your classmates and teachers. It's all here!<br><br></p>
+    <p><%= link_to "Create an Account", new_user_url, class: "btn btn-lg btn-success", role: "button" %></p>
+  </div>
+
+  <div class="footer">
+    <p>&copy; Classy 2014</p>
+  </div>
+
+</div> <!-- /container -->
